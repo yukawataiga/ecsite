@@ -81,6 +81,7 @@
 			<s:textfield required="required" name="loginUserId"/>
 			<s:password required="required" name = "loginPassword"/>
 			<s:submit value="ログイン"/>
+		</s:form>
 			<br>
 			<div id="text-link">
 				<p>
@@ -92,7 +93,6 @@
 					<a href='<s:url action="GoHomeAction"/>'>こちら</a>
 				</p>
 			</div>
-		</s:form>
   	</div>
 </div>
 

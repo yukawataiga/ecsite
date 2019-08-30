@@ -1,14 +1,11 @@
 package com.internousdev.ecsite.action;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.ecsite.dao.BuyItemDAO;
 import com.internousdev.ecsite.dao.LoginDAO;
-import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.internousdev.ecsite.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -19,7 +16,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public Map<String, Object> session;
 	private LoginDAO loginDAO = new LoginDAO();
 	private LoginDTO loginDTO = new LoginDTO();
-	private BuyItemDAO buyItemDAO = new BuyItemDAO();
 	private String errorMessage = null;
 
 	public String execute() throws SQLException {
@@ -35,15 +31,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 			//さっきの項目で管理したフラグで選択
 			if(loginDTO.getLoginFlg()) {
-				BuyItemDAO dao = new BuyItemDAO();
-				ArrayList<BuyItemDTO> itemList = new ArrayList<>();
-				itemList = dao.getBuyItemList();
-				session.put("dto", itemList);
-				BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
-				session.put("login_user_id", loginDTO.getLoginId());
-				session.put("id", buyItemDTO.getId());
-				session.put("buyItem_name", buyItemDTO.getItemName());
-				session.put("buyItem_price", buyItemDTO.getItemPrice());
 				result = SUCCESS;
 			//フラグが無かった場合
 			}else{

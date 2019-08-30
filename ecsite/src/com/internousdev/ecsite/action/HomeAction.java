@@ -19,13 +19,6 @@ public class HomeAction extends ActionSupport implements SessionAware {
 	public String execute() throws SQLException {
 		String result = "login";
 		if(session.containsKey("login_user_id")) {
-			BuyItemDTO dto = dao.getBuyItemInfo();
-			itemList = dao.getBuyItemList();
-			session.put("dto",itemList);
-			session.put("buyItemList", itemList);
-			session.put("id", dto.getId());
-			session.put("buyItem_name", dto.getItemName());
-			session.put("buyItem_price", dto.getItemPrice());
 			result = SUCCESS ;
 		}
 		if(session.containsKey("admin_flg")) {

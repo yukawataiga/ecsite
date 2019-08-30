@@ -72,24 +72,22 @@ select {
 </style>
 <script type="text/javascript">
 	function changePrice() {
-		const
-		obj = document.getElementById("item_name");
-		const
-		price = document.getElementById("item_price");
-		let
-		index = obj.selectedIndex - 1;
-		alert(index);
+		const obj = document.getElementById("item_name");
+		const price = document.getElementById("item_price");
+		const pricelist = document.getElementById("priceList");
+		let id = obj.value;
+		alert(id);
 
-		if (index == 0) {
-			price.innerHTML = '<s:property value="#session.dto[0].itemPrice" />円';
-		}
-		if (index == 1) {
-			price.innerHTML = '<b><s:property value="#session.dto[1].itemPrice" /></b>円';
-		}
+		let PriceList = pricelist.value;
+		alert(PriceList);
+		let str = PriceList[4];
+
+		alert(str);
+		price.innerHTML = str, '円';
 
 	}
 </script>
-<title>buyItem画面</title>
+<title>buyItem_pullDown画面</title>
 </head>
 
 <body>
@@ -100,7 +98,7 @@ select {
 
 	<div id="main">
 		<div id="top">
-			<p>buyItem画面</p>
+			<p>buyItem_pullDown画面</p>
 		</div>
 		<div>
 			<s:if test="errorMessage != null">
@@ -119,6 +117,7 @@ select {
 				</tr>
 				<tr>
 					<td><span>値段</span></td>
+					<s:hidden id="priceList"  value="%{priceList}"/>
 					<td id="item_price"></td>
 				</tr>
 				<tr>
