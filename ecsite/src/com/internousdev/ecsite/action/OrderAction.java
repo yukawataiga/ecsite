@@ -18,7 +18,6 @@ public class OrderAction extends ActionSupport implements SessionAware{
 		int i=0;
 
 		while(flag){
-			System.out.println(orderCount[i]);
 			if(orderCount[i].equals("")){
 				orderCount[i] = "0";
 			}
