@@ -85,7 +85,7 @@
   	</div>
 
 	<div>
-	<s:form action="OrderAction">
+	<s:form action="OrderCompleteAction">
 		<h3>商品情報は以下になります。</h3>
 		<table border="1">
 			<tr>
@@ -94,22 +94,16 @@
 				<th>値段</th>
 				<th>在庫</th>
 				<th>挿入日</th>
-				<th>詳細</th>
 				<th>受注</th>
 			</tr>
-			<s:iterator value="ItemList" status="st">
+			<s:iterator value="session.itemList" status="st">
 			<tr>
 				<td><s:property value="Id"/></td>
 				<td><s:property value="item_name"/></td>
 				<td><s:property value="item_price"/><span>円</span></td>
 				<td><s:property value="item_stock"/><span>個</span></td>
 				<td><s:property value="insert_date"/></td>
-				<td>
-					<a href='<s:url action="ItemDetailsAction"><s:param name="Id" value="%{Id}" /></s:url>'>詳細</a>
-				</td>
-				<td>
-						<input type="text" size ="4" name = "orderCount[<s:property value="#st.index"/>]" value="">
-				</td>
+				<td><s:property value="orderCount"/></td>
 			</tr>
 			</s:iterator>
 			</table>

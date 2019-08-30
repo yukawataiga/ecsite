@@ -120,5 +120,13 @@
 		<action name="UserDeleteCompleteAction" class="com.internousdev.ecsite.action.UserDeleteCompleteAction" method="execute">
 			<result name="success">userDeleteComplete.jsp</result>
 		</action>
+		<!--  OrderAction -->
+		<action name="OrderAction" class="com.internousdev.ecsite.action.OrderAction" method="execute">
+			<result name="success">order.jsp</result>
+		</action>
+		<!--  OrderCompleteAction -->
+		<action name="OrderCompleteAction" class="com.internousdev.ecsite.action.OrderCompleteAction" method="execute">
+			<result name="success">orderComplete.jsp</result>
+		</action>
 	</package>
 </struts>

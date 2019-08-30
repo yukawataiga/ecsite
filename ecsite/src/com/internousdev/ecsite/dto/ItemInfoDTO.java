@@ -2,7 +2,7 @@ package com.internousdev.ecsite.dto;
 
 public class ItemInfoDTO {
 	private String item_name;
-	private int item_price, item_stock, id;
+	private int item_price, item_stock, id,orderCount;
 	private String insert_date;
 
 	public String getItem_name() {
@@ -37,5 +37,11 @@ public class ItemInfoDTO {
 	}
 	public void setInsert_date(String insert_date) {
 		this.insert_date = insert_date;
+	}
+	public int getOrderCount() {
+		return orderCount;
+	}
+	public void setOrderCount(int orderCount) {
+		this.orderCount = orderCount;
 	}
 }

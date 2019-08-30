@@ -57,10 +57,6 @@
 	display: inline-block;
 	text-align: right;
 	}
-		#text-right {
-			display: inline-block;
-			text-align: right;
-		}
 	</style>
 
 	<script type="text/javascript">
@@ -70,7 +66,7 @@
 		}
 
 	</script>
-	<title>ItemList画面</title>
+	<title>orderComplete画面</title>
 </head>
 
 <body>
@@ -81,45 +77,20 @@
 
 <div id="main">
 	<div id="top">
-		<p>ItemList</p>
+		<p>OrderComplete</p>
   	</div>
 
 	<div>
-	<s:form action="OrderAction">
-		<h3>商品情報は以下になります。</h3>
-		<table border="1">
-			<tr>
-				<th>商品ID</th>
-				<th>商品名</th>
-				<th>値段</th>
-				<th>在庫</th>
-				<th>挿入日</th>
-				<th>詳細</th>
-				<th>受注</th>
-			</tr>
-			<s:iterator value="ItemList" status="st">
-			<tr>
-				<td><s:property value="Id"/></td>
-				<td><s:property value="item_name"/></td>
-				<td><s:property value="item_price"/><span>円</span></td>
-				<td><s:property value="item_stock"/><span>個</span></td>
-				<td><s:property value="insert_date"/></td>
-				<td>
-					<a href='<s:url action="ItemDetailsAction"><s:param name="Id" value="%{Id}" /></s:url>'>詳細</a>
-				</td>
-				<td>
-						<input type="text" size ="4" name = "orderCount[<s:property value="#st.index"/>]" value="">
-				</td>
-			</tr>
-			</s:iterator>
-			</table>
-			<s:submit value="受注"/>
-		</s:form>
+		<p>受注が完了しました。</p>
   	</div>
 
-  	<div id="text-right">
+  	<div>
   		<p>
-  			管理者画面に戻る場合には
+  			<a href='<s:url action="ItemListAction"/>'>商品一覧</a>
+  			<span>から商品の確認が可能です</span>
+  		</p>
+  		<p>
+  			管理画面に戻る場合には
   			<a href='<s:url action="AdminAction"/>'>こちら</a>
   		</p>
   	</div>

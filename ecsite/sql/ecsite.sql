@@ -44,3 +44,4 @@ delete_date datetime
 
 insert into item_info_transaction(item_name, item_price, item_stock) values("ノートBook",100, 50);
 insert into login_user_transaction(login_id, login_pass, user_name) values("internous", "internous01", "test");
+insert into login_user_transaction(login_id,login_pass,admin_flg) values("admin","admin","1")
